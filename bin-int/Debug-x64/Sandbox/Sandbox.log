@@ -1,2 +1,6 @@
 ﻿  SandboxApp.cpp
-C:\Users\ariam\Documents\UNISUBJECTS\YEAR 3\Llama\Llama\src\Llama\Log.h(5,10): fatal error C1083: Cannot open include file: 'spdlog/spdlog.h': No such file or directory
+C:\Users\ariam\Documents\UNISUBJECTS\YEAR 3\Llama\Llama\src\Llama\Log.h(20,42): warning C4251: 'Llama::Log::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Llama::Log'
+C:\Users\ariam\Documents\UNISUBJECTS\YEAR 3\Llama\Llama\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+C:\Users\ariam\Documents\UNISUBJECTS\YEAR 3\Llama\Llama\src\Llama\Log.h(21,42): warning C4251: 'Llama::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'Llama::Log'
+C:\Users\ariam\Documents\UNISUBJECTS\YEAR 3\Llama\Llama\vendor\spdlog\include\spdlog\details\registry.h(34): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+  Sandbox.vcxproj -> C:\Users\ariam\Documents\UNISUBJECTS\YEAR 3\Llama\bin\Debug-x64\Sandbox\Sandbox.exe
