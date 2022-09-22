@@ -1,0 +1,3 @@
+[submodule "Llama/vendor/spdlog"]
+	path = Llama/vendor/spdlog
+	url = https://github.com/gabime/spdlog
