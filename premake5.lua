@@ -13,25 +13,25 @@ workspace "Llama"
 project "Llama"
     location "Llama"
     kind "SharedLib"
-    language "C++"
+	language "C++"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-    files 
-    {
-        "%{prj.name}/srs/**.h",
-        "%{prj.name}/srs/**.cpp"
-    }
+    files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
 
-    includedirs
-    {
-         "%{prj.name}//vendor/spdlog/include;"
-    }
+	includedirs
+	{
+		"%{prj.name}/vendor/spdlog/include"
+	}
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "On"
+		cppdialect "C++17"
+		staticruntime "On"
         systemversion "10.0.18362.0"
 
         defines
@@ -41,9 +41,9 @@ project "Llama"
         }
 
         postbuildcommands
-        {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-        }
+		{
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+		}
 
    filter "configurations:Debug"
        defines "LLAMA_DEBUG"
@@ -60,41 +60,41 @@ project "Llama"
 
 
 project "Sandbox"
-    location "Sandbox"
-    kind "ConsoleApp"
-    language "C++"
-
-    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
-
-    files 
-    {
-        "%{prj.name}/srs/**.h",
-        "%{prj.name}/srs/**.cpp"
-    }
+        location "Sandbox"
+        kind "ConsoleApp"
+        language "C++"
+    
+        targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+        objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    
+        files
+        {
+            "%{prj.name}/src/**.h",
+            "%{prj.name}/src/**.cpp"
+        }
 
    
-    includedirs
-    {
-         "Llama/vendor/spdlog/include;",
-         "Llama/src"
-    }
-
+        includedirs
+        {
+            "Llama/vendor/spdlog/include",
+            "Llama/src"
+        }
     
-    links 
-    {
-        "Llama"
-    }
+        links
+        {
+            "Llama"
+        }
 
-    filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "On"
+        filter "system:windows"
+		cppdialect "C++17"
+		staticruntime "On"
         systemversion "10.0.18362.0"
 
-        defines
-        {
-            "LLAMA_PLATFORM_WINDOWS"
-        }
+        
+		defines
+		{
+			"LLAMA_PLATFORM_WINDOWS"
+		}
 
    filter "configurations:Debug"
         defines "LLAMA_DEBUG"
