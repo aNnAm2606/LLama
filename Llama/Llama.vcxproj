@@ -147,6 +147,10 @@
     <ClInclude Include="src\Llama\Application.h" />
     <ClInclude Include="src\Llama\Core.h" />
     <ClInclude Include="src\Llama\EntryPoint.h" />
+    <ClInclude Include="src\Llama\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Llama\Events\Event.h" />
+    <ClInclude Include="src\Llama\Events\KeyEvent.h" />
+    <ClInclude Include="src\Llama\Events\MouseEvent.h" />
     <ClInclude Include="src\Llama\Log.h" />
   </ItemGroup>
   <ItemGroup>

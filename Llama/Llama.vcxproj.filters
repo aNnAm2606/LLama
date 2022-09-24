@@ -4,6 +4,9 @@
     <Filter Include="Llama">
       <UniqueIdentifier>{6C2A9B0D-D83E-C3BE-A1C0-661E0D94BFEF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Llama\Events">
+      <UniqueIdentifier>{D0646395-BCC7-F239-654D-2BF0518FBEBC}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Llama.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Llama\EntryPoint.h">
       <Filter>Llama</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Llama\Events\ApplicationEvent.h">
+      <Filter>Llama\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Llama\Events\Event.h">
+      <Filter>Llama\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Llama\Events\KeyEvent.h">
+      <Filter>Llama\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Llama\Events\MouseEvent.h">
+      <Filter>Llama\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Llama\Log.h">
       <Filter>Llama</Filter>
