@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Llama
 {
 	class LLAMA_API MouseMovedEvent : public Event

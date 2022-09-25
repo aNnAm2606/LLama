@@ -18,6 +18,9 @@ project "Llama"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "llamapch.h"
+    pchsource "Llama/src/llamapch.cpp"
+
     files
 	{
 		"%{prj.name}/src/**.h",
