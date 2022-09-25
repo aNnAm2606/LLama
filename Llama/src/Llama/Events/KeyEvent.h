@@ -18,10 +18,10 @@ namespace Llama
 		int m_KeyCode;
 	};
 
-	class LLAMA_API KeyPressEvent : public KeyEvent
+	class LLAMA_API KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressEvent(int keycode, int repeatCount)//repeat count acts like a bool, 0 means non repeat event, else its a repeat event
+		KeyPressedEvent(int keycode, int repeatCount)//repeat count acts like a bool, 0 means non repeat event, else its a repeat event
 			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
 		inline int GetRepeatCount() const { return m_RepeatCount; }

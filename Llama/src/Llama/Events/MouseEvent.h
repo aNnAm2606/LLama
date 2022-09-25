@@ -10,16 +10,15 @@ namespace Llama
 		MouseMovedEvent(float x, float y)
 			: m_MouseX(x), m_MouseY(y) {}
 
-		inline float GetX() const { return m_MouseX; } //Getters for where the mouse event stands
+		inline float GetX() const { return m_MouseX; }
 		inline float GetY() const { return m_MouseY; }
 
 		std::string ToString() const override
 		{
-			std::stringstream ss; //string to print mouse move event, allong with coordinates
+			std::stringstream ss;
 			ss << "MouseMovedEvent: " << m_MouseX << ", " << m_MouseY;
 			return ss.str();
 		}
-
 
 		EVENT_CLASS_TYPE(MouseMoved)
 			EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
@@ -31,7 +30,7 @@ namespace Llama
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
-			:m_XOffset(xOffset), m_YOffset(yOffset) {}
+			: m_XOffset(xOffset), m_YOffset(yOffset) {}
 
 		inline float GetXOffset() const { return m_XOffset; }
 		inline float GetYOffset() const { return m_YOffset; }
@@ -39,7 +38,7 @@ namespace Llama
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "MouseScrolledEvent: " << GetXOffset() << ", " << GetXOffset();
+			ss << "MouseScrolledEvent: " << GetXOffset() << ", " << GetYOffset();
 			return ss.str();
 		}
 
@@ -52,7 +51,9 @@ namespace Llama
 	class LLAMA_API MouseButtonEvent : public Event
 	{
 	public:
+		inline int GetMouseButton() const { return m_Button; }
 
+		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	protected:
 		MouseButtonEvent(int button)
 			: m_Button(button) {}
@@ -73,7 +74,7 @@ namespace Llama
 			return ss.str();
 		}
 
-		EVENT_CLASS_TYPE(MouseButtonPressed);
+		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
 	class LLAMA_API MouseButtonReleasedEvent : public MouseButtonEvent
@@ -91,5 +92,4 @@ namespace Llama
 
 		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
-
 }
