@@ -22,7 +22,7 @@ namespace Llama
 		Shutdown();
 	}
 
-	WindowsWindow::WindowsWindow(const WindowProps& props)
+	void WindowsWindow::Init(const WindowProps& props)
 	{
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
