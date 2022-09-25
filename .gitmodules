@@ -1,3 +1,6 @@
 [submodule "Llama/vendor/spdlog"]
 	path = Llama/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Llama/vendor/GLFW"]
+	path = Llama/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW

@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Llama/Log.h"
+
 #ifdef LLAMA_PLATFORM_WINDOWS
 #include <Windows.h>
 #endif
