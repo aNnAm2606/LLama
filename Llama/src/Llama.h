@@ -6,6 +6,8 @@
 #include "Llama/Layer.h"
 #include "Llama/Log.h"
 
+#include "Llama/ImGui/ImGuiLayer.h"
+
 // -----------------------ENTRY POINT-------------------------------
 #include "Llama/EntryPoint.h"
 //-------------------------------------------------------------------

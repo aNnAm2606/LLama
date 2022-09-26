@@ -13,9 +13,11 @@ workspace "Llama"
     IncludeDir = {}
     IncludeDir["GLFW"] = "Llama/vendor/GLFW/include"
     IncludeDir["Glad"] = "Llama/vendor/Glad/include"
+    IncludeDir["ImGui"] = "Llama/vendor/imgui"
 
     include "Llama/vendor/GLFW"
     include "Llama/vendor/Glad"
+    include "Llama/vendor/imgui"
 
 project "Llama"
     location "Llama"
@@ -39,13 +41,15 @@ project "Llama"
         "%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.Glad}"
+        "%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
     links 
 	{ 
 		"GLFW",
         "Glad",
+        "ImGui",
 		"opengl32.lib"
 	}
 

@@ -4,3 +4,6 @@
 [submodule "Llama/vendor/GLFW"]
 	path = Llama/vendor/GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "Llama/vendor/imgui"]
+	path = Llama/vendor/imgui
+	url = https://github.com/TheCherno/imgui

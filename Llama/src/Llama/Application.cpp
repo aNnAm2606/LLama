@@ -9,8 +9,13 @@ namespace Llama {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	Application* Application::s_Instance = nullptr; //Need this bc wherever we r we want to access oir APP for info
+
 	Application::Application()
 	{
+		LLAMA_CORE_ASSERT(!s_Instance, "Application already exists!");//We only have one APP
+		s_Instance = this; //Holds a to our APP, which gets set when we construct the APP
+
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
@@ -26,11 +31,13 @@ namespace Llama {
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 	//Push overlayer to layerstack
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)

@@ -13,6 +13,12 @@
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Llama\ImGui">
+      <UniqueIdentifier>{69c95b25-db84-4bca-9d50-86595546d6e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{b2012139-8a5b-4302-a4a2-03af7bc2b648}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Llama.h" />
@@ -53,6 +59,12 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\llamapch.h" />
+    <ClInclude Include="src\Llama\ImGui\ImGuiLayer.h">
+      <Filter>Llama\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Llama\Application.cpp">
@@ -71,5 +83,11 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\llamapch.cpp" />
+    <ClCompile Include="src\Llama\ImGui\ImGuiLayer.cpp">
+      <Filter>Llama\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
