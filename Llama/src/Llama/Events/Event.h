@@ -19,7 +19,7 @@ namespace Llama
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,   //covered by ApplicationEvent.h
 		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyReleased,                                               //covered by KeyEvent.h
+		KeyPressed, KeyReleased, KeyTyped,                                     //covered by KeyEvent.h
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled     //covered by MouseEvent.h
 	};
 

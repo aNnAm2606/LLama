@@ -53,6 +53,22 @@ namespace Llama
 		}
 
 		EVENT_CLASS_TYPE(KeyReleased)
-	};
 
+	};
+	//If u type a character
+	class LLAMA_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode) {}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << m_KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
 }
