@@ -37,6 +37,12 @@
     <ClInclude Include="src\Llama\Events\MouseEvent.h">
       <Filter>Llama\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Llama\Layer.h">
+      <Filter>Llama</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Llama\LayerStack.h">
+      <Filter>Llama</Filter>
+    </ClInclude>
     <ClInclude Include="src\Llama\Log.h">
       <Filter>Llama</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Llama\Application.cpp">
+      <Filter>Llama</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Llama\Layer.cpp">
+      <Filter>Llama</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Llama\LayerStack.cpp">
       <Filter>Llama</Filter>
     </ClCompile>
     <ClCompile Include="src\Llama\Log.cpp">

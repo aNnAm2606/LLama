@@ -45,8 +45,10 @@ namespace Llama
 	//Base class for events
 	class LLAMA_API Event
 	{
-		friend class EventDispatcher;
+		
 	public:
+		bool Handled = false;//To see if event has been handled or not
+
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
@@ -56,8 +58,7 @@ namespace Llama
 		{
 			return GetCategoryFlags() & category; //If returns 0, not in category, other, it will be true
 		}
-	protected:
-		bool m_Handled = false; //To see if event has been handled or not
+
 	};
 
 	class EventDispatcher
@@ -75,7 +76,7 @@ namespace Llama
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())//which event type the current event which we are trying to dispatch is
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

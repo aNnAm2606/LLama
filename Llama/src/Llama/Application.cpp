@@ -19,14 +19,29 @@ namespace Llama {
 	{
 
 	}
+	//Push layer to layerstack
+	void Application::PushLayer(Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+	//Push overlayer to layerstack
+	void Application::PushOverlay(Layer* layer)
+	{
+		m_LayerStack.PushOverlay(layer);
+	}
 
 	void Application::OnEvent(Event& e)
 	{
 		//If dispatcher sees close event, the he has to dispatch it to the Bind Event function
 		EventDispatcher dispatcher(e); // If "e" event that comes through is close event, checks that by going through event.h get static type
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-
-		LLAMA_CORE_TRACE("{0}", e);
+		//Here we go backwards through layerstack and we call OnEvent() whenever we recieve an event, if event is marked as handled we break
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
+		{
+			(*--it)->OnEvent(e);
+			if (e.Handled)
+				break;
+		}
 	}
 
 	void Application::Run()
@@ -35,6 +50,10 @@ namespace Llama {
 		{
 			glClearColor(0.2, 0.2, 0.5, 0.5);
 			glClear(GL_COLOR_BUFFER_BIT);
+			//We itterate over all the layers, called on Update()
+			for (Layer* layer : m_LayerStack)
+				layer->OnUpdate();
+
 			m_Window->OnUpdate();
 		}
 	}

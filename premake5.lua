@@ -63,14 +63,17 @@ project "Llama"
 
    filter "configurations:Debug"
        defines "LLAMA_DEBUG"
+       buildoptions "/MDd"
        symbols "On"
          
    filter "configurations:Release"
         defines "LLAMA_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
    filter "configurations:Dist"
         defines "LLAMA_DIST"
+        buildoptions "/MD"
         optimize "On"
                        
 
@@ -114,13 +117,16 @@ project "Sandbox"
 
    filter "configurations:Debug"
         defines "LLAMA_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
    filter "configurations:Release"
         defines "LLAMA_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
    filter "configurations:Dist"
         defines "LLAMA_DIST"
+        buildoptions "/MD"
         optimize "On"
                    

@@ -1,22 +1,39 @@
 #include <Llama.h>
 
-class Sandbox : public Llama:: Application
+class ExampleLayer : public Llama::Layer
 {
 public:
-	Sandbox()
+	ExampleLayer()
+		: Layer("Example")
 	{
 	}
 
-	~Sandbox()
+	void OnUpdate() override
 	{
+		LLAMA_INFO("ExampleLayer::Update");
 	}
 
-
-private:
-
+	void OnEvent(Llama::Event& event) override
+	{
+		LLAMA_TRACE("{0}", event);
+	}
 };
 
-Llama::Application* Llama::CreateApplication()
-{
-	return new Sandbox();
-}
+	class Sandbox : public Llama::Application
+	{
+	public:
+		Sandbox()
+		{
+			PushLayer(new ExampleLayer());
+		}
+
+		~Sandbox()
+		{
+		}
+
+	};
+
+	Llama::Application* Llama::CreateApplication()
+	{
+		return new Sandbox();
+	}
