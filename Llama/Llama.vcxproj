@@ -159,9 +159,11 @@
     <ClInclude Include="src\Llama\Events\MouseEvent.h" />
     <ClInclude Include="src\Llama\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Llama\Input.h" />
+    <ClInclude Include="src\Llama\KeyCodes.h" />
     <ClInclude Include="src\Llama\Layer.h" />
     <ClInclude Include="src\Llama\LayerStack.h" />
     <ClInclude Include="src\Llama\Log.h" />
+    <ClInclude Include="src\Llama\MouseButtonCodes.h" />
     <ClInclude Include="src\Llama\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />

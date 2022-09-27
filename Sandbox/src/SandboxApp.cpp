@@ -10,12 +10,19 @@ public:
 
 	void OnUpdate() override
 	{
-		LLAMA_INFO("ExampleLayer::Update");
+		if (Llama::Input::IsKeyPressed(LLAMA_KEY_TAB))
+			LLAMA_TRACE("Tab key is pressed (poll)!");
 	}
 
 	void OnEvent(Llama::Event& event) override
 	{
-		LLAMA_TRACE("{0}", event);
+		if (event.GetEventType() == Llama::EventType::KeyPressed)
+		{
+			Llama::KeyPressedEvent& e = (Llama::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == LLAMA_KEY_TAB)
+				LLAMA_TRACE("Tab key is pressed (event)!");
+			LLAMA_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 

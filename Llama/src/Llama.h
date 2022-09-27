@@ -6,6 +6,10 @@
 #include "Llama/Layer.h"
 #include "Llama/Log.h"
 
+#include "Llama/Input.h"
+#include "Llama/KeyCodes.h"
+#include "Llama/MouseButtonCodes.h"
+
 #include "Llama/ImGui/ImGuiLayer.h"
 
 // -----------------------ENTRY POINT-------------------------------

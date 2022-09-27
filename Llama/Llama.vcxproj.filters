@@ -46,6 +46,12 @@
     <ClInclude Include="src\Llama\ImGui\ImGuiLayer.h">
       <Filter>Llama\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Llama\Input.h">
+      <Filter>Llama</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Llama\KeyCodes.h">
+      <Filter>Llama</Filter>
+    </ClInclude>
     <ClInclude Include="src\Llama\Layer.h">
       <Filter>Llama</Filter>
     </ClInclude>
@@ -55,20 +61,22 @@
     <ClInclude Include="src\Llama\Log.h">
       <Filter>Llama</Filter>
     </ClInclude>
+    <ClInclude Include="src\Llama\MouseButtonCodes.h">
+      <Filter>Llama</Filter>
+    </ClInclude>
     <ClInclude Include="src\Llama\Window.h">
       <Filter>Llama</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\llamapch.h" />
-    <ClInclude Include="src\Llama\Input.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Llama\Application.cpp">
@@ -89,12 +97,12 @@
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\llamapch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
