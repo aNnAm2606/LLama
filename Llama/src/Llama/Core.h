@@ -11,6 +11,10 @@
     #error Llama doesnt support this platform!
 #endif
 
+#ifdef LLAMA_DEBUG
+#define LLAMA_ENABLE_ASSERTS
+#endif
+
 #ifdef LLAMA_ENABLE_ASSERTS
 #define LLAMA_ASSERT(x, ...) { if(!(x)) { LLAMA_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #define LLAMA_CORE_ASSERT(x, ...) { if(!(x)) { LLAMA_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
